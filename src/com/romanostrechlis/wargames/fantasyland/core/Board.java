@@ -10,9 +10,11 @@ import java.util.List;
  * Created by Romanos on 9/12/2016.
  */
 public class Board {
+
   private Integer height, width;
   private List<Terrain> terrainList = new ArrayList<>();
   private List<Unit> unitList = new ArrayList<>();
+  private Integer squareSize = 100;
   private Player p1;
   private Player p2;
   private Game game;
@@ -59,5 +61,9 @@ public class Board {
 
   public List<Unit> getUnitList() {
     return unitList;
+  }
+
+  public Integer getSquareSize() {
+    return squareSize;
   }
 }

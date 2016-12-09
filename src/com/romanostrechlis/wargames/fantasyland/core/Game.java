@@ -6,6 +6,7 @@ import com.romanostrechlis.wargames.fantasyland.gui.GameBoardGUI;
  * Created by Romanos on 9/12/2016.
  */
 public class Game {
+
   private Board board;
   private Player p1, p2;
   public int turn;

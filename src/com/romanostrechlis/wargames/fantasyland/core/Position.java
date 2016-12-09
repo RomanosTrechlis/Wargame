@@ -25,11 +25,19 @@ public class Position {
   public boolean equals(Object obj) {
     Position position = (Position) obj;
     return this.x.compareTo(position.getX()) == 0
-        && this.y.compareTo(position.getY()) == 0;
+           && this.y.compareTo(position.getY()) == 0;
   }
 
   @Override
   public int hashCode() {
     return this.x.hashCode() + this.y.hashCode();
+  }
+
+  @Override
+  public String toString() {
+    return "Position{" +
+           "x=" + x +
+           ", y=" + y +
+           '}';
   }
 }

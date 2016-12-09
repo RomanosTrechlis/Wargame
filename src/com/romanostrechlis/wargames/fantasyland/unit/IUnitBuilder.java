@@ -3,7 +3,7 @@ package com.romanostrechlis.wargames.fantasyland.unit;
 import com.romanostrechlis.wargames.fantasyland.core.Player;
 
 /**
- * Created by xa86 on 9/12/2016.
+ * Created by Romanos on 9/12/2016.
  */
 public interface IUnitBuilder {
 

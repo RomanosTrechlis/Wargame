@@ -3,7 +3,7 @@ package com.romanostrechlis.wargames.fantasyland.core;
 import com.romanostrechlis.wargames.fantasyland.gui.GameBoardGUI;
 
 /**
- * Created by xa86 on 9/12/2016.
+ * Created by Romanos on 9/12/2016.
  */
 public class Game {
   private Board board;

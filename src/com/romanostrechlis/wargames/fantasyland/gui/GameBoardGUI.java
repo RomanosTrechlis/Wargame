@@ -19,7 +19,7 @@ import javax.swing.*;
 
 
 /**
- * Created by xa86 on 9/12/2016.
+ * Created by Romanos on 9/12/2016.
  */
 public class GameBoardGUI {
   private Game game;

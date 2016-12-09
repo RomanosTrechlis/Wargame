@@ -4,6 +4,8 @@ import com.romanostrechlis.wargames.fantasyland.core.Player;
 import com.romanostrechlis.wargames.fantasyland.core.Position;
 
 /**
+ * Base class for units.
+ *
  * Created by Romanos on 9/12/2016.
  */
 public abstract class UnitBase implements Unit {

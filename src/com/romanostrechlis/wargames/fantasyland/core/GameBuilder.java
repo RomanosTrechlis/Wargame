@@ -37,4 +37,12 @@ public class GameBuilder {
   public Integer getWidth() {
     return width;
   }
+
+  public Player getPlayer1() {
+    return player1;
+  }
+
+  public Player getPlayer2() {
+    return player2;
+  }
 }

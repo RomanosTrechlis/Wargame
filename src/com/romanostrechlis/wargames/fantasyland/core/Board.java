@@ -12,6 +12,7 @@ import java.util.List;
 public class Board {
   private Integer height, width;
   private List<Terrain> terrainList = new ArrayList<>();
+  private List<Unit> unitList = new ArrayList<>();
   private Player p1;
   private Player p2;
   private Game game;
@@ -30,8 +31,10 @@ public class Board {
     }
   }
 
-  public void setUnit(Player player, Unit unit) {
-
+  public void addUnit(Unit unit) {
+    if (!unitList.contains(unit)) {
+      unitList.add(unit);
+    }
   }
 
   public void moveUnit(Unit unit, Position destination) {
@@ -52,5 +55,9 @@ public class Board {
 
   public List<Terrain> getTerrainList() {
     return terrainList;
+  }
+
+  public List<Unit> getUnitList() {
+    return unitList;
   }
 }

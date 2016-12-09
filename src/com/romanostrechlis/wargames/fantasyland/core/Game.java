@@ -11,12 +11,13 @@ public class Game {
   public int turn;
 
   public Game(GameBuilder builder) {
-    board = new Board(builder.getHeight(), builder.getWidth(), this);
+    this.board = new Board(builder.getHeight(), builder.getWidth(), this);
+    this.p1 = builder.getPlayer1();
+    this.p2 = builder.getPlayer2();
   }
 
   public void gameLoop() {
     GameBoardGUI gui = new GameBoardGUI(this);
-
   }
 
   public void setPlayers(Player p1,

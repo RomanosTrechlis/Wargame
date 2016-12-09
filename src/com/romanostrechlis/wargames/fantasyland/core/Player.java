@@ -9,9 +9,18 @@ import java.util.List;
  */
 public class Player {
 
+  private String name;
+
   private List<Unit> units;
   private boolean turn = false;
   private boolean winner = false;
   private boolean playsFirst = false;
 
+  public Player(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
 }

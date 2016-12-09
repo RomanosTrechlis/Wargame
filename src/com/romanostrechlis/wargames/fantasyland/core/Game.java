@@ -2,8 +2,6 @@ package com.romanostrechlis.wargames.fantasyland.core;
 
 import com.romanostrechlis.wargames.fantasyland.gui.GameBoardGUI;
 
-import java.awt.*;
-
 /**
  * Created by Romanos on 9/12/2016.
  */
@@ -11,12 +9,19 @@ public class Game {
 
   private Board board;
   private Player p1, p2;
-  public int turn;
-  private boolean terrainClosed = false;
   private GameBoardGUI gui;
+  private Integer boardSquareSize;
 
+  public int turn;
+
+  /**
+   * Game constructor
+   *
+   * @param builder
+   */
   public Game(GameBuilder builder) {
     this.board = new Board(builder.getHeight(), builder.getWidth(), this);
+    this.board.setSquareSize(builder.getBoardSquareSize());
     this.p1 = builder.getPlayer1();
     this.p2 = builder.getPlayer2();
     this.gui = new GameBoardGUI(this);
@@ -44,5 +49,12 @@ public class Game {
 
   public int getTurn() {
     return turn;
+  }
+
+  public Player getCurrentPlayer() {
+    if (turn%2 == 0) {
+      return getPlayer1();
+    }
+    return getPlayer2();
   }
 }

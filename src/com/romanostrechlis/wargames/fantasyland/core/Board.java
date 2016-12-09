@@ -14,11 +14,18 @@ public class Board {
   private Integer height, width;
   private List<Terrain> terrainList = new ArrayList<>();
   private List<Unit> unitList = new ArrayList<>();
-  private Integer squareSize = 100;
+  private Integer squareSize;
   private Player p1;
   private Player p2;
   private Game game;
 
+  /**
+   * Board constructor
+   *
+   * @param height
+   * @param width
+   * @param game
+   */
   public Board(Integer height,
                Integer width,
                Game game) {
@@ -65,5 +72,9 @@ public class Board {
 
   public Integer getSquareSize() {
     return squareSize;
+  }
+
+  public void setSquareSize(Integer squareSize) {
+    this.squareSize = squareSize;
   }
 }

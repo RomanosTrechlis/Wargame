@@ -45,6 +45,7 @@ public class GameWindow extends JPanel {
    */
   private void drawGrid(Integer height,
                         Integer width) {
+    int buttonSize = game.getBoard().getSquareSize();
     for (int row = 0; row < height; row++) {
       for (int col = 0; col < width; col++) {
         gbc.gridx = row;
@@ -53,7 +54,7 @@ public class GameWindow extends JPanel {
         Position position = new Position(row, col);
         JButton button = new JButton();
         button.setBorderPainted(true);
-        button.setPreferredSize(new Dimension(100, 100));
+        button.setPreferredSize(new Dimension(buttonSize, buttonSize));
 
         if (TerrainUtil.isOnSpot(game, position)) {
           button.setBackground(Color.green);

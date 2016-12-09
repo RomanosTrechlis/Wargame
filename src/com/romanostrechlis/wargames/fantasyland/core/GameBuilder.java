@@ -7,8 +7,9 @@ import java.lang.reflect.Constructor;
  */
 public class GameBuilder {
 
-  private Integer height;
-  private Integer width;
+  private Integer height = 5;
+  private Integer width = 5;
+  private Integer boardSquareSize = 100;
   private Player player1;
   private Player player2;
 
@@ -30,6 +31,11 @@ public class GameBuilder {
     return this;
   }
 
+  public GameBuilder squareSize(Integer squareSize) {
+    this.boardSquareSize = squareSize;
+    return this;
+  }
+
   public Integer getHeight() {
     return height;
   }
@@ -44,5 +50,9 @@ public class GameBuilder {
 
   public Player getPlayer2() {
     return player2;
+  }
+
+  public Integer getBoardSquareSize() {
+    return boardSquareSize;
   }
 }

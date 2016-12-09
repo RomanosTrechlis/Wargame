@@ -1,18 +1,9 @@
 package com.romanostrechlis.wargames.fantasyland;
 
+import com.romanostrechlis.wargames.fantasyland.core.Board;
 import com.romanostrechlis.wargames.fantasyland.core.Game;
 import com.romanostrechlis.wargames.fantasyland.core.GameBuilder;
 import com.romanostrechlis.wargames.fantasyland.core.Player;
-import com.romanostrechlis.wargames.fantasyland.core.Position;
-import com.romanostrechlis.wargames.fantasyland.terrain.Forrest;
-import com.romanostrechlis.wargames.fantasyland.terrain.Terrain;
-import com.romanostrechlis.wargames.fantasyland.terrain.TerrainBuilder;
-import com.romanostrechlis.wargames.fantasyland.terrain.TerrainCover;
-import com.romanostrechlis.wargames.fantasyland.terrain.TerrainSpeed;
-import com.romanostrechlis.wargames.fantasyland.terrain.TerrainType;
-import com.romanostrechlis.wargames.fantasyland.unit.Militia;
-import com.romanostrechlis.wargames.fantasyland.unit.Unit;
-import com.romanostrechlis.wargames.fantasyland.unit.UnitBuilder;
 
 /**
  * Created by Romanos on 9/12/2016.
@@ -34,11 +25,12 @@ public class Main {
    * @throws Exception
    */
   private static void initializeGame() throws Exception {
-    Player p1 = new Player();
-    Player p2 = new Player();
+    Player p1 = new Player("Player_1");
+    Player p2 = new Player("Player_2");
     Game game = new GameBuilder()
-        .boardSize(5, 5)
+        .boardSize(10, 10)
         .players(p1, p2)
+        .squareSize(50)
         .build(Game.class);
     game.runTerrainWindow();
   }

@@ -49,11 +49,34 @@ public abstract class TerrainBase implements Terrain {
   }
 
   @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    TerrainBase that = (TerrainBase) o;
+
+    if (area != null ? !area.equals(that.area) : that.area != null) {
+      return false;
+    }
+
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    return area != null ? area.hashCode() : 0;
+  }
+
+  @Override
   public String toString() {
     return "Id=" + Id +
-        ", area=" + area +
-        ", type=" + type +
-        ", cover=" + cover +
-        ", speed=" + speed;
+           ", area=" + area +
+           ", type=" + type +
+           ", cover=" + cover +
+           ", speed=" + speed;
   }
 }

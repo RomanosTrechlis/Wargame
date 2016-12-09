@@ -36,14 +36,14 @@ public class UnitBuilder {
   }
 
   public UnitBuilder melee(Integer attack,
-                            Integer defence) {
+                           Integer defence) {
     this.meleeAttack = attack;
     this.meleeDefence = defence;
     return this;
   }
 
   public UnitBuilder ranged(Integer attack,
-                             Integer defence) {
+                            Integer defence) {
     this.rangedAttack = attack;
     this.rangedDefence = defence;
     return this;
@@ -55,7 +55,7 @@ public class UnitBuilder {
   }
 
   public UnitBuilder unitStrength(Integer maxStrength,
-                                   Integer currentStrength) {
+                                  Integer currentStrength) {
     this.unitMaxStrength = maxStrength;
     this.unitStrength = currentStrength;
     return this;

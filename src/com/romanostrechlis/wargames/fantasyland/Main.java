@@ -14,8 +14,6 @@ import com.romanostrechlis.wargames.fantasyland.unit.Militia;
 import com.romanostrechlis.wargames.fantasyland.unit.Unit;
 import com.romanostrechlis.wargames.fantasyland.unit.UnitBuilder;
 
-import java.util.List;
-
 /**
  * Created by Romanos on 9/12/2016.
  */
@@ -33,13 +31,13 @@ public class Main {
       System.out.println(militia.toString());
       System.out.println(forrest.toString());
 
-
       Player p1 = new Player();
       Player p2 = new Player();
       Game game = new GameBuilder()
           .boardSize(5, 5)
           .players(p1, p2)
           .build(Game.class);
+      /*
       List<Terrain> list = game.getBoard().getTerrainList();
       list.add(
           new TerrainBuilder()
@@ -49,8 +47,9 @@ public class Main {
               .speed(TerrainSpeed.HALF)
               .type(TerrainType.DENSE_FORREST)
               .build(Forrest.class));
+      */
       game.gameLoop();
-    }catch (Exception e) {
+    } catch (Exception e) {
       System.out.println("Error: " + e.getMessage());
       throw e;
     }

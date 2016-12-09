@@ -82,13 +82,13 @@ public abstract class UnitBase implements Unit {
   @Override
   public String toString() {
     return "name='" + name + '\'' +
-        ", meleeAttack=" + meleeAttack +
-        ", meleeDefence=" + meleeDefence +
-        ", rangedAttack=" + rangedAttack +
-        ", rangedDefence=" + rangedDefence +
-        ", movement=" + movement +
-        ", unitStrength=" + unitStrength +
-        ", unitMaxStrength=" + unitMaxStrength +
-        ", cost=" + cost;
+           ", meleeAttack=" + meleeAttack +
+           ", meleeDefence=" + meleeDefence +
+           ", rangedAttack=" + rangedAttack +
+           ", rangedDefence=" + rangedDefence +
+           ", movement=" + movement +
+           ", unitStrength=" + unitStrength +
+           ", unitMaxStrength=" + unitMaxStrength +
+           ", cost=" + cost;
   }
 }

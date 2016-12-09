@@ -11,12 +11,15 @@ import java.util.List;
 public interface Unit {
 
   public boolean validateMovement(Position endPosition);
+
   public List<Position> drawPath(Position endPosition);
+
   public boolean isBloodied();
 
   public Player getPlayer();
 
   public Position getCurrentPosition();
+
   public void setCurrentPosition(Position currentPosition);
 
   public void setUnitStrength(Integer unitStrength);
@@ -24,11 +27,17 @@ public interface Unit {
   public String getName();
 
   public Integer getMeleeAttack();
+
   public Integer getMeleeDefence();
+
   public Integer getRangedAttack();
+
   public Integer getRangedDefence();
+
   public Integer getMovement();
+
   public Integer getUnitStrength();
+
   public Integer getUnitMaxStrength();
 
   public UnitType getUnitType();

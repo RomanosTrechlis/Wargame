@@ -10,6 +10,7 @@ import java.util.List;
  * Created by Romanos on 9/12/2016.
  */
 public class TerrainBuilder {
+
   private List<Position> area = new ArrayList<>();
   private TerrainType type;
   private TerrainCover cover;

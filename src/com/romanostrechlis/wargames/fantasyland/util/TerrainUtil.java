@@ -2,7 +2,7 @@ package com.romanostrechlis.wargames.fantasyland.util;
 
 import com.romanostrechlis.wargames.fantasyland.core.Game;
 import com.romanostrechlis.wargames.fantasyland.core.Position;
-import com.romanostrechlis.wargames.fantasyland.terrain.Terrain;
+import com.romanostrechlis.wargames.fantasyland.model.terrain.Terrain;
 
 import java.util.List;
 

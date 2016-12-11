@@ -1,7 +1,7 @@
-package com.romanostrechlis.wargames.fantasyland.terrain;
+package com.romanostrechlis.wargames.fantasyland.model.terrain;
 
 import com.romanostrechlis.wargames.fantasyland.core.Position;
-import com.romanostrechlis.wargames.fantasyland.unit.Unit;
+import com.romanostrechlis.wargames.fantasyland.model.unit.Unit;
 
 /**
  * Created by Romanos on 9/12/2016.

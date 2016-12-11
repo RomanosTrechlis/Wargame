@@ -1,9 +1,13 @@
 package com.romanostrechlis.wargames.fantasyland.gui;
 
 import com.romanostrechlis.wargames.fantasyland.core.Game;
+import com.romanostrechlis.wargames.fantasyland.core.TileType;
 import com.romanostrechlis.wargames.fantasyland.gui.game.GameWindow;
-import com.romanostrechlis.wargames.fantasyland.gui.terrain.TerrainWindow;
-import com.romanostrechlis.wargames.fantasyland.gui.terrain.TerrainWindowListener;
+import com.romanostrechlis.wargames.fantasyland.gui.terrain.hexagon.HexagonWindow;
+import com.romanostrechlis.wargames.fantasyland.gui.main.MainWindow;
+import com.romanostrechlis.wargames.fantasyland.gui.main.MainWindowListener;
+import com.romanostrechlis.wargames.fantasyland.gui.terrain.square.TerrainWindow;
+import com.romanostrechlis.wargames.fantasyland.gui.terrain.square.TerrainWindowListener;
 
 import java.awt.*;
 
@@ -24,17 +28,39 @@ public class GameBoardGUI {
     gui = this;
   }
 
+  public void createMainWindow() {
+    EventQueue.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        JFrame frame = new JFrame("FantasyLand - Terrain");
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        frame.addWindowListener(new MainWindowListener(game));
+        frame.setLayout(new BorderLayout());
+        frame.setJMenuBar(addMenuBar());
+        MainWindow window = new MainWindow(game, gui, frame);
+        frame.add(window);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+      }
+    });
+  }
+
   public void createTerrainWindow() {
     EventQueue.invokeLater(new Runnable() {
       @Override
       public void run() {
         JFrame frame = new JFrame("FantasyLand - Terrain");
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        frame.addWindowListener(new TerrainWindowListener(game));
         frame.setLayout(new BorderLayout());
         frame.setJMenuBar(addMenuBar());
-        TerrainWindow window = new TerrainWindow(game, gui);
-        frame.add(window);
+        if (game.getPreferences().getTilesType().equalsIgnoreCase(TileType.HEXAGONAL.toString())) {
+          HexagonWindow window = new HexagonWindow(game, gui);
+          frame.add(window);
+        } else {
+          frame.addWindowListener(new TerrainWindowListener(game));
+          TerrainWindow window = new TerrainWindow(game, gui);
+          frame.add(window);
+        }
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -59,6 +85,22 @@ public class GameBoardGUI {
     });
   }
 
+  public void createHexWindow() {
+    EventQueue.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        JFrame frame = new JFrame("FantasyLand - Hexagon");
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+        frame.setJMenuBar(addMenuBar());
+        HexagonWindow window = new HexagonWindow(game, gui);
+        frame.add(window);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+      }
+    });
+  }
   public synchronized void notifyInput() {
     notifyAll();
   }

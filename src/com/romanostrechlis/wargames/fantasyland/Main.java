@@ -32,6 +32,7 @@ public class Main {
         .players(p1, p2)
         .squareSize(50)
         .build(Game.class);
-    game.runTerrainWindow();
+    game.runMainWindow();
+    //game.runHexWindow();
   }
 }

@@ -1,4 +1,4 @@
-package com.romanostrechlis.wargames.fantasyland.terrain;
+package com.romanostrechlis.wargames.fantasyland.model.terrain;
 
 /**
  * Created by Romanos on 9/12/2016.

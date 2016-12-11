@@ -1,4 +1,4 @@
-package com.romanostrechlis.wargames.fantasyland.terrain;
+package com.romanostrechlis.wargames.fantasyland.model.terrain;
 
 import com.romanostrechlis.wargames.fantasyland.core.Position;
 

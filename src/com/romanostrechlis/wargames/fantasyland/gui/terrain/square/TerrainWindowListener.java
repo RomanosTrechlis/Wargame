@@ -1,4 +1,4 @@
-package com.romanostrechlis.wargames.fantasyland.gui.terrain;
+package com.romanostrechlis.wargames.fantasyland.gui.terrain.square;
 
 import com.romanostrechlis.wargames.fantasyland.core.Game;
 

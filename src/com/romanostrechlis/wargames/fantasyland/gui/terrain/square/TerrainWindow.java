@@ -1,9 +1,8 @@
-package com.romanostrechlis.wargames.fantasyland.gui.terrain;
+package com.romanostrechlis.wargames.fantasyland.gui.terrain.square;
 
 import com.romanostrechlis.wargames.fantasyland.core.Game;
-import com.romanostrechlis.wargames.fantasyland.core.Position;
 import com.romanostrechlis.wargames.fantasyland.gui.GameBoardGUI;
-import com.romanostrechlis.wargames.fantasyland.terrain.TerrainType;
+import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainType;
 
 import java.awt.*;
 
@@ -29,6 +28,10 @@ public class TerrainWindow extends JPanel {
                        GameBoardGUI gui) {
     this.game = game;
     this.gui = gui;
+    draw();
+  }
+
+  private void draw() {
     JPanel panel = new JPanel();
     panel.setLayout(new GridBagLayout());
     Integer height = game.getBoard().getHeight();

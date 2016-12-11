@@ -1,4 +1,4 @@
-package com.romanostrechlis.wargames.fantasyland.unit;
+package com.romanostrechlis.wargames.fantasyland.model.unit;
 
 import com.romanostrechlis.wargames.fantasyland.core.Player;
 import com.romanostrechlis.wargames.fantasyland.core.Position;

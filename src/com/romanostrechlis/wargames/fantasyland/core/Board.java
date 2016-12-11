@@ -1,7 +1,7 @@
 package com.romanostrechlis.wargames.fantasyland.core;
 
-import com.romanostrechlis.wargames.fantasyland.terrain.Terrain;
-import com.romanostrechlis.wargames.fantasyland.unit.Unit;
+import com.romanostrechlis.wargames.fantasyland.model.terrain.Terrain;
+import com.romanostrechlis.wargames.fantasyland.model.unit.Unit;
 
 import java.util.ArrayList;
 import java.util.List;

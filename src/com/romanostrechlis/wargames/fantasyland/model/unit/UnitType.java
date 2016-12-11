@@ -1,4 +1,4 @@
-package com.romanostrechlis.wargames.fantasyland.unit;
+package com.romanostrechlis.wargames.fantasyland.model.unit;
 
 /**
  * Created by Romanos on 9/12/2016.

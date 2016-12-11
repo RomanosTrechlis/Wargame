@@ -1,6 +1,6 @@
 package com.romanostrechlis.wargames.fantasyland.core;
 
-import com.romanostrechlis.wargames.fantasyland.unit.Unit;
+import com.romanostrechlis.wargames.fantasyland.model.unit.Unit;
 
 import java.util.List;
 

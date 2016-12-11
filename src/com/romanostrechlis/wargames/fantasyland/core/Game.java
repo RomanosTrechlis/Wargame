@@ -11,6 +11,7 @@ public class Game {
   private Player p1, p2;
   private GameBoardGUI gui;
   private Integer boardSquareSize;
+  private GamePreferences preferences;
 
   public int turn;
 
@@ -20,11 +21,16 @@ public class Game {
    * @param builder
    */
   public Game(GameBuilder builder) {
+    this.preferences = new GamePreferences();
     this.board = new Board(builder.getHeight(), builder.getWidth(), this);
     this.board.setSquareSize(builder.getBoardSquareSize());
     this.p1 = builder.getPlayer1();
     this.p2 = builder.getPlayer2();
     this.gui = new GameBoardGUI(this);
+  }
+
+  public void runMainWindow() throws Exception {
+    gui.createMainWindow();
   }
 
   public void runTerrainWindow() throws Exception {
@@ -33,6 +39,10 @@ public class Game {
 
   public void runGameWindow() {
     gui.createGameWindow();
+  }
+
+  public void runHexWindow() {
+    gui.createHexWindow();
   }
 
   public Board getBoard() {
@@ -56,5 +66,9 @@ public class Game {
       return getPlayer1();
     }
     return getPlayer2();
+  }
+
+  public GamePreferences getPreferences() {
+    return preferences;
   }
 }

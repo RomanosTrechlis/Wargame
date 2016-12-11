@@ -1,15 +1,15 @@
-package com.romanostrechlis.wargames.fantasyland.gui.terrain;
+package com.romanostrechlis.wargames.fantasyland.gui.terrain.square;
 
 import com.romanostrechlis.wargames.fantasyland.core.Board;
 import com.romanostrechlis.wargames.fantasyland.core.Game;
 import com.romanostrechlis.wargames.fantasyland.core.Position;
 import com.romanostrechlis.wargames.fantasyland.gui.GameBoardGUI;
-import com.romanostrechlis.wargames.fantasyland.terrain.Forrest;
-import com.romanostrechlis.wargames.fantasyland.terrain.Terrain;
-import com.romanostrechlis.wargames.fantasyland.terrain.TerrainBuilder;
-import com.romanostrechlis.wargames.fantasyland.terrain.TerrainCover;
-import com.romanostrechlis.wargames.fantasyland.terrain.TerrainSpeed;
-import com.romanostrechlis.wargames.fantasyland.terrain.TerrainType;
+import com.romanostrechlis.wargames.fantasyland.model.terrain.Forrest;
+import com.romanostrechlis.wargames.fantasyland.model.terrain.Terrain;
+import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainBuilder;
+import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainCover;
+import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainSpeed;
+import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainType;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

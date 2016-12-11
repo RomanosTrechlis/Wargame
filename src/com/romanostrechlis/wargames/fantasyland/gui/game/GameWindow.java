@@ -3,7 +3,7 @@ package com.romanostrechlis.wargames.fantasyland.gui.game;
 import com.romanostrechlis.wargames.fantasyland.core.Game;
 import com.romanostrechlis.wargames.fantasyland.core.Position;
 import com.romanostrechlis.wargames.fantasyland.gui.GameBoardGUI;
-import com.romanostrechlis.wargames.fantasyland.gui.terrain.TerrainActionListener;
+import com.romanostrechlis.wargames.fantasyland.gui.terrain.square.TerrainActionListener;
 import com.romanostrechlis.wargames.fantasyland.util.TerrainUtil;
 
 import java.awt.*;

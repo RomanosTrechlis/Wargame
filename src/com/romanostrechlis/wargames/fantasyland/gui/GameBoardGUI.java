@@ -39,6 +39,7 @@ public class GameBoardGUI {
         frame.setJMenuBar(addMenuBar());
         MainWindow window = new MainWindow(game, gui, frame);
         frame.add(window);
+        frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
       }

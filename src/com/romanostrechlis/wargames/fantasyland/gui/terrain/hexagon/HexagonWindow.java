@@ -47,9 +47,9 @@ public class HexagonWindow extends JPanel {
                         JPanel panel) {
     int buttonSize = game.getBoard().getSquareSize();
 
-    for (int row = 0; row < width; row++) {
-      for (int col = 0; col < height; col++) {
-        gbc.gridx = row; gbc.gridy = col;
+    for (int row = 0; row < height; row++) {
+      for (int col = 0; col < width; col++) {
+        gbc.gridx = col; gbc.gridy = row;
         Hexagon button = new Hexagon(game.getBoard());
         button.setPreferredSize(new Dimension(buttonSize, buttonSize));
 

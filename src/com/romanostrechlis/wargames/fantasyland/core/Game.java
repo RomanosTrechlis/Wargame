@@ -22,8 +22,6 @@ public class Game {
    */
   public Game(GameBuilder builder) {
     this.preferences = new GamePreferences();
-    this.board = new Board(builder.getHeight(), builder.getWidth(), this);
-    this.board.setSquareSize(builder.getBoardSquareSize());
     this.p1 = builder.getPlayer1();
     this.p2 = builder.getPlayer2();
     this.gui = new GameBoardGUI(this);
@@ -34,6 +32,8 @@ public class Game {
   }
 
   public void runTerrainWindow() throws Exception {
+    this.board = new Board(preferences.getHeight(), preferences.getWidth(), this);
+    this.board.setSquareSize(preferences.getTileSize());
     gui.createTerrainWindow();
   }
 

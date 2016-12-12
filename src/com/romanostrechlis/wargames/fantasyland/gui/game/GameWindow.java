@@ -48,8 +48,8 @@ public class GameWindow extends JPanel {
     int buttonSize = game.getBoard().getSquareSize();
     for (int row = 0; row < height; row++) {
       for (int col = 0; col < width; col++) {
-        gbc.gridx = row;
-        gbc.gridy = col;
+        gbc.gridx = col;
+        gbc.gridy = row;
         //Border border = new MatteBorder(1, 1, 1, 1, Color.GRAY);
         Position position = new Position(row, col);
         JButton button = new JButton();

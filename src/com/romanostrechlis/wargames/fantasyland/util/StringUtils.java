@@ -16,4 +16,9 @@ public class StringUtils {
     return !isEmptyOrNull(param);
   }
 
+  public static String nvl(String param,
+                           String defaultValue) {
+    return isEmptyOrNull(param) ? defaultValue : param;
+  }
+
 }

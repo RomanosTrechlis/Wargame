@@ -54,7 +54,7 @@ public class TerrainUtil {
         .cover(TerrainCover.NONE)
         .speed(TerrainSpeed.IMPASSABLE)
         .type(TerrainType.LAKE)
-        .tileColor(Color.blue)
+        .tileColor(Color.cyan)
         .build(TerrainImpl.class);
   }
 

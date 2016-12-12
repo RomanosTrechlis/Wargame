@@ -5,6 +5,8 @@ import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainType;
 import com.romanostrechlis.wargames.fantasyland.util.ComboBoxItems;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
@@ -29,12 +31,16 @@ public class SidePanel extends JPanel {
     label.setBorder(new MatteBorder(0, 1, 0, 0, Color.GRAY));
     label.setAlignmentX(Component.LEFT_ALIGNMENT);
     this.add(label);
-    
+
     JComboBox comboBox = new JComboBox(ComboBoxItems.terrainTypes);
     comboBox.setEditable(false);
-    //comboBox.setBorder(new MatteBorder(0, 1, 0, 0, Color.GRAY));
-
-    // todo: add listener to combo box
+    comboBox.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        JComboBox cb = (JComboBox) e.getSource();
+        game.getBoard().setCurrentTerrain((String) cb.getSelectedItem());
+      }
+    });
     this.add(comboBox);
 
     JPanel panel = new JPanel();

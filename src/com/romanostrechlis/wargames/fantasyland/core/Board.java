@@ -1,7 +1,9 @@
 package com.romanostrechlis.wargames.fantasyland.core;
 
 import com.romanostrechlis.wargames.fantasyland.model.terrain.Terrain;
+import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainType;
 import com.romanostrechlis.wargames.fantasyland.model.unit.Unit;
+import com.romanostrechlis.wargames.fantasyland.util.ComboBoxItems;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,8 @@ public class Board {
   private Player p1;
   private Player p2;
   private Game game;
+
+  private String currentTerrain = ComboBoxItems.terrainTypes[0];
 
   /**
    * Board constructor
@@ -76,5 +80,13 @@ public class Board {
 
   public void setSquareSize(Integer squareSize) {
     this.squareSize = squareSize;
+  }
+
+  public String getCurrentTerrain() {
+    return currentTerrain;
+  }
+
+  public void setCurrentTerrain(String currentTerrain) {
+    this.currentTerrain = currentTerrain;
   }
 }

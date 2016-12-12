@@ -3,6 +3,7 @@ package com.romanostrechlis.wargames.fantasyland.model.terrain;
 import com.romanostrechlis.wargames.fantasyland.core.Position;
 import com.romanostrechlis.wargames.fantasyland.model.unit.Unit;
 
+import java.awt.*;
 import java.util.List;
 
 /**
@@ -17,4 +18,6 @@ public interface Terrain {
   public TerrainSpeed affectsSpeedOf(Unit unit);
 
   public List<Position> getArea();
+
+  public Color getTileColor();
 }

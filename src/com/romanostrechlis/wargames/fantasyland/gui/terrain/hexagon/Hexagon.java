@@ -1,13 +1,7 @@
 package com.romanostrechlis.wargames.fantasyland.gui.terrain.hexagon;
 
 import com.romanostrechlis.wargames.fantasyland.core.Board;
-import com.romanostrechlis.wargames.fantasyland.core.Position;
-import com.romanostrechlis.wargames.fantasyland.model.terrain.Forrest;
-import com.romanostrechlis.wargames.fantasyland.model.terrain.Terrain;
-import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainBuilder;
-import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainCover;
-import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainSpeed;
-import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainType;
+import com.romanostrechlis.wargames.fantasyland.util.ActionUtil;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -102,60 +96,21 @@ public class Hexagon extends JComponent implements MouseListener {
   public void mouseClicked(MouseEvent mouseEvent) {
     Hexagon hex = (Hexagon) mouseEvent.getSource();
     try {
-      performAction(hex);
+      ActionUtil.performAction(board, hex);
     } catch (Exception e) {
 
     }
-    //System.out.println("CLICKED");
   }
 
   @Override
-  public void mousePressed(MouseEvent e) {
-
-  }
+  public void mousePressed(MouseEvent e) {}
 
   @Override
-  public void mouseReleased(MouseEvent e) {
-
-  }
+  public void mouseReleased(MouseEvent e) {}
 
   @Override
-  public void mouseEntered(MouseEvent e) {
-
-  }
+  public void mouseEntered(MouseEvent e) {}
 
   @Override
-  public void mouseExited(MouseEvent e) {
-
-  }
-
-  /**
-   * Add or remove terrain from board.
-   *
-   * @param button
-   * @throws Exception
-   */
-  private void performAction(Hexagon button) throws Exception {
-    Point rv = new Point();
-    Integer squareSize = board.getSquareSize();
-
-    Position position = new Position(button.getLocation(rv).x / squareSize,
-                                     button.getLocation(rv).y / squareSize);
-
-    Terrain forrest = new TerrainBuilder()
-        .addPosition(position)
-        .cover(TerrainCover.FULL)
-        .speed(TerrainSpeed.HALF)
-        .type(TerrainType.DENSE_FORREST)
-        .build(Forrest.class);
-    System.out.println(forrest.toString());
-
-    if (board.getTerrainList().contains(forrest)) {
-      board.getTerrainList().remove(forrest);
-      button.setBackground(Color.white);
-    } else {
-      board.getTerrainList().add(forrest);
-      button.setBackground(Color.green);
-    }
-  }
+  public void mouseExited(MouseEvent e) {}
 }

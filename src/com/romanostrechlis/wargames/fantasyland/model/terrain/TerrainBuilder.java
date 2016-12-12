@@ -2,6 +2,7 @@ package com.romanostrechlis.wargames.fantasyland.model.terrain;
 
 import com.romanostrechlis.wargames.fantasyland.core.Position;
 
+import java.awt.*;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +17,17 @@ public class TerrainBuilder {
   private TerrainCover cover;
   private TerrainSpeed speed;
   private Long Id;
+  private Color color;
 
   public <T extends Terrain> T build(Class<T> buildClass) throws Exception {
     this.Id = System.currentTimeMillis();
     Constructor constructor = buildClass.getConstructor(this.getClass());
     return buildClass.cast(constructor.newInstance(this));
+  }
+
+  public TerrainBuilder tileColor(Color color) {
+    this.color = color;
+    return this;
   }
 
   public TerrainBuilder cover(TerrainCover cover) {
@@ -48,6 +55,10 @@ public class TerrainBuilder {
       area.add(position);
     }
     return this;
+  }
+
+  public Color getColor() {
+    return color;
   }
 
   public List<Position> getArea() {

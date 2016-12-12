@@ -28,7 +28,7 @@ public class TerrainWindowListener implements WindowListener {
 
   @Override
   public void windowClosed(WindowEvent e) {
-    game.runGameWindow();
+    //game.runGameWindow();
   }
 
   @Override

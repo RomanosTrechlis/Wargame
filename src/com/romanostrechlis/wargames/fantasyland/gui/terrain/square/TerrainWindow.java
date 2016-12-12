@@ -2,6 +2,7 @@ package com.romanostrechlis.wargames.fantasyland.gui.terrain.square;
 
 import com.romanostrechlis.wargames.fantasyland.core.Game;
 import com.romanostrechlis.wargames.fantasyland.gui.GameBoardGUI;
+import com.romanostrechlis.wargames.fantasyland.gui.terrain.IWindow;
 import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainType;
 
 import java.awt.*;
@@ -12,7 +13,7 @@ import javax.swing.border.MatteBorder;
 /**
  * Created by Romanos on 12/9/2016.
  */
-public class TerrainWindow extends JPanel {
+public class TerrainWindow extends JPanel implements IWindow {
 
   private Game game;
   private GridBagConstraints gbc;
@@ -28,10 +29,9 @@ public class TerrainWindow extends JPanel {
                        GameBoardGUI gui) {
     this.game = game;
     this.gui = gui;
-    draw();
   }
 
-  private void draw() {
+  public void draw() {
     JPanel panel = new JPanel();
     panel.setLayout(new GridBagLayout());
     Integer height = game.getBoard().getHeight();

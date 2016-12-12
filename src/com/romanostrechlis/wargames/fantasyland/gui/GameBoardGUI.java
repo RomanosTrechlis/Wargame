@@ -55,11 +55,13 @@ public class GameBoardGUI {
         frame.setLayout(new BorderLayout());
         frame.setJMenuBar(addMenuBar());
         if (game.getPreferences().getTilesType().equalsIgnoreCase(TileType.HEXAGONAL.toString())) {
-          HexagonWindow window = new HexagonWindow(game, gui);
+          HexagonWindow window = new HexagonWindow(game);
+          window.draw();
           frame.add(window);
         } else {
           frame.addWindowListener(new TerrainWindowListener(game));
           TerrainWindow window = new TerrainWindow(game, gui);
+          window.draw();
           frame.add(window);
         }
         frame.pack();
@@ -94,7 +96,8 @@ public class GameBoardGUI {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
         frame.setJMenuBar(addMenuBar());
-        HexagonWindow window = new HexagonWindow(game, gui);
+        HexagonWindow window = new HexagonWindow(game);
+        window.draw();
         frame.add(window);
         frame.pack();
         frame.setLocationRelativeTo(null);

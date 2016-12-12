@@ -8,11 +8,11 @@ import java.awt.event.WindowListener;
 /**
  * Created by Romanos on 12/9/2016.
  */
-public class TerrainWindowListener implements WindowListener {
+public class SquareWindowListener implements WindowListener {
 
   private Game game;
 
-  public TerrainWindowListener(Game game) {
+  public SquareWindowListener(Game game) {
     this.game = game;
   }
 

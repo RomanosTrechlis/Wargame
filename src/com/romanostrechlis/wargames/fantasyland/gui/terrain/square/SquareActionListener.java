@@ -20,13 +20,13 @@ import javax.swing.*;
 /**
  * Created by Romanos on 12/9/2016.
  */
-public class TerrainActionListener implements ActionListener {
+public class SquareActionListener implements ActionListener {
 
   private Game game;
   private GameBoardGUI gui;
 
-  public TerrainActionListener(Game game,
-                               GameBoardGUI gui) {
+  public SquareActionListener(Game game,
+                              GameBoardGUI gui) {
     this.game = game;
     this.gui = gui;
   }

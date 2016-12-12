@@ -6,8 +6,8 @@ import com.romanostrechlis.wargames.fantasyland.gui.game.GameWindow;
 import com.romanostrechlis.wargames.fantasyland.gui.terrain.hexagon.HexagonWindow;
 import com.romanostrechlis.wargames.fantasyland.gui.main.MainWindow;
 import com.romanostrechlis.wargames.fantasyland.gui.main.MainWindowListener;
-import com.romanostrechlis.wargames.fantasyland.gui.terrain.square.TerrainWindow;
-import com.romanostrechlis.wargames.fantasyland.gui.terrain.square.TerrainWindowListener;
+import com.romanostrechlis.wargames.fantasyland.gui.terrain.square.SquareWindow;
+import com.romanostrechlis.wargames.fantasyland.gui.terrain.square.SquareWindowListener;
 
 import java.awt.*;
 
@@ -59,8 +59,8 @@ public class GameBoardGUI {
           window.draw();
           frame.add(window);
         } else {
-          frame.addWindowListener(new TerrainWindowListener(game));
-          TerrainWindow window = new TerrainWindow(game, gui);
+          frame.addWindowListener(new SquareWindowListener(game));
+          SquareWindow window = new SquareWindow(game, gui);
           window.draw();
           frame.add(window);
         }

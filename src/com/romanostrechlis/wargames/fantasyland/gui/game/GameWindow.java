@@ -3,7 +3,7 @@ package com.romanostrechlis.wargames.fantasyland.gui.game;
 import com.romanostrechlis.wargames.fantasyland.core.Game;
 import com.romanostrechlis.wargames.fantasyland.core.Position;
 import com.romanostrechlis.wargames.fantasyland.gui.GameBoardGUI;
-import com.romanostrechlis.wargames.fantasyland.gui.terrain.square.TerrainActionListener;
+import com.romanostrechlis.wargames.fantasyland.gui.terrain.square.SquareActionListener;
 import com.romanostrechlis.wargames.fantasyland.util.TerrainUtil;
 
 import java.awt.*;
@@ -61,7 +61,7 @@ public class GameWindow extends JPanel {
         } else {
           button.setBackground(Color.white);
         }
-        TerrainActionListener action = new TerrainActionListener(game, gui);
+        SquareActionListener action = new SquareActionListener(game, gui);
         button.addActionListener(action);
         add(button, gbc);
       }

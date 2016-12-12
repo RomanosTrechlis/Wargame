@@ -2,6 +2,7 @@ package com.romanostrechlis.wargames.fantasyland.gui.terrain.hexagon;
 
 import com.romanostrechlis.wargames.fantasyland.core.Game;
 import com.romanostrechlis.wargames.fantasyland.gui.GameBoardGUI;
+import com.romanostrechlis.wargames.fantasyland.gui.controls.SidePanel;
 import com.romanostrechlis.wargames.fantasyland.gui.terrain.IWindow;
 
 import java.awt.*;
@@ -22,6 +23,8 @@ public class HexagonWindow extends JPanel implements IWindow {
   }
 
   public void draw() {
+    this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+
     JPanel panel = new JPanel();
     Integer height = game.getBoard().getHeight();
     Integer width = game.getBoard().getWidth();
@@ -31,6 +34,9 @@ public class HexagonWindow extends JPanel implements IWindow {
     this.gbc = new GridBagConstraints();
     drawGrid(height, width, panel);
     this.add(panel);
+
+    JPanel sidePanel = new SidePanel(game);
+    this.add(sidePanel);
   }
 
   /**

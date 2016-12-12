@@ -2,6 +2,7 @@ package com.romanostrechlis.wargames.fantasyland.gui.terrain.square;
 
 import com.romanostrechlis.wargames.fantasyland.core.Game;
 import com.romanostrechlis.wargames.fantasyland.gui.GameBoardGUI;
+import com.romanostrechlis.wargames.fantasyland.gui.controls.SidePanel;
 import com.romanostrechlis.wargames.fantasyland.gui.terrain.IWindow;
 import com.romanostrechlis.wargames.fantasyland.model.terrain.TerrainType;
 
@@ -32,6 +33,7 @@ public class SquareWindow extends JPanel implements IWindow {
   }
 
   public void draw() {
+    this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
     JPanel panel = new JPanel();
     panel.setLayout(new GridBagLayout());
     Integer height = game.getBoard().getHeight();
@@ -39,9 +41,9 @@ public class SquareWindow extends JPanel implements IWindow {
     this.gbc = new GridBagConstraints();
     drawGrid(height, width, panel);
     this.add(panel);
-    JPanel newPanel = new JPanel();
-    //drawControls(newPanel);
-    this.add(newPanel);
+
+    JPanel sidePanel = new SidePanel(game);
+    this.add(sidePanel);
   }
 
   /**

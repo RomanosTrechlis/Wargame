@@ -64,7 +64,7 @@ public class GameBoardGUI {
           window.draw();
           frame.add(window);
         }
-        frame.pack();
+        //frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
       }

@@ -24,16 +24,19 @@ public class HexagonWindow extends JPanel implements IWindow {
 
   public void draw() {
     this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+    this.setMaximumSize(new Dimension(50, 50));
 
     JPanel panel = new JPanel();
     Integer height = game.getBoard().getHeight();
     Integer width = game.getBoard().getWidth();
+    this.setMinimumSize(new Dimension(width ,height));
     this.layout = new HexLayout(height, width);
-
     panel.setLayout(layout);
     this.gbc = new GridBagConstraints();
     drawGrid(height, width, panel);
-    this.add(panel);
+    JScrollPane scrollPane = new JScrollPane(panel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+        JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    this.add(scrollPane);
 
     JPanel sidePanel = new SidePanel(game);
     this.add(sidePanel);

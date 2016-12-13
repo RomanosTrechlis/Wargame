@@ -66,6 +66,14 @@ public class ActionUtil {
       terrain = TerrainUtil.createLake(position);
     } else if (TerrainUtil.isDenseForrest(board.getCurrentTerrain())) {
       terrain = TerrainUtil.createDenseForrest(position);
+    } else if (TerrainUtil.isHill(board.getCurrentTerrain())) {
+      terrain = TerrainUtil.createHill(position);
+    } else if (TerrainUtil.isRocks(board.getCurrentTerrain())) {
+      terrain = TerrainUtil.createRocks(position);
+    } else if (TerrainUtil.isDesert(board.getCurrentTerrain())) {
+      terrain = TerrainUtil.createDesert(position);
+    } else if (TerrainUtil.isMountain(board.getCurrentTerrain())) {
+      terrain = TerrainUtil.createMountain(position);
     } else {
       terrain = TerrainUtil.createSparseForrest(position);
     }

@@ -34,7 +34,8 @@ public class TerrainUtil {
         .cover(TerrainCover.FULL)
         .speed(TerrainSpeed.HALF)
         .type(TerrainType.DENSE_FORREST)
-        .tileColor(Color.green)
+        .tileColor(new Color(16, 89, 3))
+        //.tileImage("resources/tiles/pineBlue_mid.png")
         .build(TerrainImpl.class);
   }
 
@@ -44,7 +45,7 @@ public class TerrainUtil {
         .cover(TerrainCover.HALF)
         .speed(TerrainSpeed.HALF)
         .type(TerrainType.SPARSE_FORREST)
-        .tileColor(Color.green)
+        .tileColor(new Color(37, 181, 12))
         .build(TerrainImpl.class);
   }
 
@@ -54,8 +55,48 @@ public class TerrainUtil {
         .cover(TerrainCover.NONE)
         .speed(TerrainSpeed.IMPASSABLE)
         .type(TerrainType.LAKE)
-        .tileColor(Color.cyan)
+        .tileColor(new Color(118, 143, 242))
         //.tileImage("resources/tiles/water/tileWater_tile.png")
+        .build(TerrainImpl.class);
+  }
+
+  public static Terrain createHill(Position position) throws Exception {
+    return new TerrainBuilder()
+        .addPosition(position)
+        .cover(TerrainCover.NONE)
+        .speed(TerrainSpeed.FULL)
+        .type(TerrainType.HILL)
+        .tileColor(new Color(183, 134, 11))
+        .build(TerrainImpl.class);
+  }
+
+  public static Terrain createRocks(Position position) throws Exception {
+    return new TerrainBuilder()
+        .addPosition(position)
+        .cover(TerrainCover.NONE)
+        .speed(TerrainSpeed.HALF)
+        .type(TerrainType.ROCKS)
+        .tileColor(new Color(177, 179, 181))
+        .build(TerrainImpl.class);
+  }
+
+  public static Terrain createMountain(Position position) throws Exception {
+    return new TerrainBuilder()
+        .addPosition(position)
+        .cover(TerrainCover.NONE)
+        .speed(TerrainSpeed.HALF)
+        .type(TerrainType.ROCKS)
+        .tileColor(new Color(239, 244, 249))
+        .build(TerrainImpl.class);
+  }
+
+  public static Terrain createDesert(Position position) throws Exception {
+    return new TerrainBuilder()
+        .addPosition(position)
+        .cover(TerrainCover.NONE)
+        .speed(TerrainSpeed.HALF)
+        .type(TerrainType.ROCKS)
+        .tileColor(new Color(247, 224, 123))
         .build(TerrainImpl.class);
   }
 
@@ -77,6 +118,14 @@ public class TerrainUtil {
 
   public static boolean isRocks(String terrainType) {
     return terrainType.equals(TerrainType.ROCKS.toString());
+  }
+
+  public static boolean isMountain(String terrainType) {
+    return terrainType.equals(TerrainType.MOUNTAIN.toString());
+  }
+
+  public static boolean isDesert(String terrainType) {
+    return terrainType.equals(TerrainType.DESERT.toString());
   }
 
 }

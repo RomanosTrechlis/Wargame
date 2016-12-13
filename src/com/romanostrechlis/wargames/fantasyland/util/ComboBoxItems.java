@@ -12,6 +12,9 @@ public class ComboBoxItems {
 
   public static String[] terrainTypes = {TerrainType.DENSE_FORREST.toString(),
       TerrainType.LAKE.toString(),
-      TerrainType.HIGH_GRASS.toString(),
-      TerrainType.RIVER.toString()};
+      TerrainType.SPARSE_FORREST.toString(),
+      TerrainType.HILL.toString(),
+      TerrainType.ROCKS.toString(),
+      TerrainType.DESERT.toString(),
+      TerrainType.MOUNTAIN.toString()};
 }

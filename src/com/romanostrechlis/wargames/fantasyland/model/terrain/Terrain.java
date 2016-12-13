@@ -20,4 +20,6 @@ public interface Terrain {
   public List<Position> getArea();
 
   public Color getTileColor();
+
+  public String getTilePath();
 }

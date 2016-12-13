@@ -18,6 +18,7 @@ public class TerrainImpl implements Terrain {
   public TerrainCover cover;
   public TerrainSpeed speed;
   public Color tileColor;
+  public String tileImage;
 
   public TerrainImpl(TerrainBuilder builder) {
     Id = builder.getId();
@@ -26,10 +27,16 @@ public class TerrainImpl implements Terrain {
     speed = builder.getSpeed();
     type = builder.getType();
     tileColor = builder.getColor();
+    tileImage = builder.getImage();
   }
 
   public Color getTileColor() {
     return tileColor;
+  }
+
+  @Override
+  public String getTilePath() {
+    return tileImage;
   }
 
   @Override

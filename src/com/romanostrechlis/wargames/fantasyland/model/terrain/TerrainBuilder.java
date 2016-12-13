@@ -18,6 +18,7 @@ public class TerrainBuilder {
   private TerrainSpeed speed;
   private Long Id;
   private Color color;
+  private String image;
 
   public <T extends Terrain> T build(Class<T> buildClass) throws Exception {
     this.Id = System.currentTimeMillis();
@@ -27,6 +28,11 @@ public class TerrainBuilder {
 
   public TerrainBuilder tileColor(Color color) {
     this.color = color;
+    return this;
+  }
+
+  public TerrainBuilder tileImage(String imagePath) {
+    this.image = imagePath;
     return this;
   }
 
@@ -79,5 +85,9 @@ public class TerrainBuilder {
 
   public Long getId() {
     return Id;
+  }
+
+  public String getImage() {
+    return image;
   }
 }

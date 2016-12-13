@@ -1,11 +1,13 @@
 package com.romanostrechlis.wargames.fantasyland.gui.terrain.hexagon;
 
 import com.romanostrechlis.wargames.fantasyland.core.Board;
+import com.romanostrechlis.wargames.fantasyland.core.Game;
 import com.romanostrechlis.wargames.fantasyland.util.ActionUtil;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
 
 import javax.swing.*;
 
@@ -15,14 +17,14 @@ import javax.swing.*;
 public class Hexagon extends JComponent implements MouseListener {
 
   Polygon hexagonalShape;
-  Board board;
+  Game game;
 
-  public Hexagon(Board board) {
+  public Hexagon(Game game) {
     super();
     hexagonalShape = getHexPolygon();
     setOpaque(false);
     addMouseListener(this);
-    this.board = board;
+    this.game = game;
   }
 
   /**
@@ -81,7 +83,7 @@ public class Hexagon extends JComponent implements MouseListener {
   }
 
   @Override
-  protected void paintComponent(Graphics g) {
+  public void paintComponent(Graphics g) {
     g.setColor(getBackground());
     g.fillPolygon(hexagonalShape);
     g.setColor(getForeground());
@@ -96,7 +98,7 @@ public class Hexagon extends JComponent implements MouseListener {
   public void mouseClicked(MouseEvent mouseEvent) {
     Hexagon hex = (Hexagon) mouseEvent.getSource();
     try {
-      ActionUtil.performAction(board, hex);
+      ActionUtil.performAction(game, hex);
     } catch (Exception e) {
 
     }
@@ -113,4 +115,13 @@ public class Hexagon extends JComponent implements MouseListener {
 
   @Override
   public void mouseExited(MouseEvent e) {}
+
+  public void drawIcon(BufferedImage image) {
+    Integer tileSize = game.getPreferences().getTileSize();
+    getGraphics().drawImage(image, 0, 0, tileSize, tileSize, null);
+  }
+
+  public void removeIcon() {
+    paintComponent(getGraphics());
+  }
 }

@@ -53,7 +53,7 @@ public class HexagonWindow extends JPanel implements IWindow {
     for (int row = 0; row < height; row++) {
       for (int col = 0; col < width; col++) {
         gbc.gridx = col; gbc.gridy = row;
-        Hexagon button = new Hexagon(game.getBoard());
+        Hexagon button = new Hexagon(game);
         button.setPreferredSize(new Dimension(buttonSize, buttonSize));
 
         button.setBackground(Color.white);

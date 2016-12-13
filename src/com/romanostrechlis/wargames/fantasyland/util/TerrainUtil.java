@@ -55,6 +55,7 @@ public class TerrainUtil {
         .speed(TerrainSpeed.IMPASSABLE)
         .type(TerrainType.LAKE)
         .tileColor(Color.cyan)
+        //.tileImage("resources/tiles/water/tileWater_tile.png")
         .build(TerrainImpl.class);
   }
 

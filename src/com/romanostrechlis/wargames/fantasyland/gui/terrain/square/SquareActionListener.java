@@ -27,7 +27,7 @@ public class SquareActionListener implements ActionListener {
   public void actionPerformed(ActionEvent actionEvent) {
     JButton button = (JButton) actionEvent.getSource();
     try {
-      ActionUtil.performAction(game.getBoard(), button);
+      ActionUtil.performAction(game, button);
     } catch (Exception e) {
       System.out.println(e.getMessage());
     }
